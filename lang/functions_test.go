@@ -464,6 +464,13 @@ func TestFunctions(t *testing.T) {
 			},
 		},
 
+		"include": {
+			{
+				`include("hello", "llo")`,
+				cty.BoolVal(true),
+			},
+		},
+
 		"indent": {
 			{
 				fmt.Sprintf("indent(4, %#v)", Poem),
