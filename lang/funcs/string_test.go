@@ -72,7 +72,7 @@ func TestReplace(t *testing.T) {
 	}
 }
 
-func TestInclude(t *testing.T) {
+func TestIncludes(t *testing.T) {
 	tests := []struct {
 		String cty.Value
 		Substr cty.Value
@@ -113,7 +113,7 @@ func TestInclude(t *testing.T) {
 
 	for _, test := range tests {
 		t.Run(fmt.Sprintf("include(%#v, %#v)", test.String, test.Substr), func(t *testing.T) {
-			got, err := Include(test.String, test.Substr)
+			got, err := Includes(test.String, test.Substr)
 
 			if test.Err {
 				if err == nil {

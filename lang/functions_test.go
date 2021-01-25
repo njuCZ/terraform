@@ -464,9 +464,9 @@ func TestFunctions(t *testing.T) {
 			},
 		},
 
-		"include": {
+		"includes": {
 			{
-				`include("hello", "llo")`,
+				`includes("hello", "llo")`,
 				cty.BoolVal(true),
 			},
 		},

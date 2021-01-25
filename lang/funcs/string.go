@@ -46,8 +46,8 @@ var ReplaceFunc = function.New(&function.Spec{
 	},
 })
 
-// IncludeFunc constructs a function that determines whether a given string may be found within another string.
-var IncludeFunc = function.New(&function.Spec{
+// IncludesFunc constructs a function that determines whether a given string may be found within another string.
+var IncludesFunc = function.New(&function.Spec{
 	Params: []function.Parameter{
 		{
 			Name: "str",
@@ -73,8 +73,8 @@ func Replace(str, substr, replace cty.Value) (cty.Value, error) {
 	return ReplaceFunc.Call([]cty.Value{str, substr, replace})
 }
 
-// Include searches a given string for another given substring,
+// Includes searches a given string for another given substring,
 // and replaces all occurences with a given replacement string.
-func Include(str, substr cty.Value) (cty.Value, error) {
-	return IncludeFunc.Call([]cty.Value{str, substr})
+func Includes(str, substr cty.Value) (cty.Value, error) {
+	return IncludesFunc.Call([]cty.Value{str, substr})
 }
